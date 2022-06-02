@@ -16,7 +16,7 @@ students.shift();
 
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 
-const chuoiTen = ""; // TODO: CODE HERE
+const chuoiTen = students.join(" - "); // TODO: CODE HERE
 
 console.log('chuoiTen', chuoiTen);
 
