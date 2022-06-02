@@ -8,32 +8,27 @@ console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
 
-students.push("Thành Phát");
-console.log(students);
+students[6] = 'Thành Phát'
 
 // Xoá phần tử đầu tiên ra khỏi array
 
-students.shift();
-console.log(students);
+students.shift()
 
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 
-const chuoiTen = students.join("-"); // TODO: CODE HERE
+const chuoiTen = students.join(' - '); // TODO: CODE HERE
+
 console.log('chuoiTen', chuoiTen);
 
 //Xoá bỏ Như Ý ra khỏi array;
-const viTriCuaNhuY = students.indexOf("Như Ý");
-const lastStudents = students.splice(viTriCuaNhuY,1);
-console.log(lastStudents);
+let ValuetoRemove = 'Như Ý'
+const NewArray = students.filter(item => item !== ValuetoRemove)
 
-// Cho 1 array mới lastStudents
-
+// Cho 1 array mới
+console.log(NewArray)
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
 
-const students3 = students.concat(students2);
-console.log(students3);
-
-console.log("Kết quả: ");
-console.log(students3);
+console.log('Kết quả:');
+console.log(students.concat(students2));
