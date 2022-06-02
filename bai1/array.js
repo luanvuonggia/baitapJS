@@ -25,7 +25,7 @@ console.log('chuoiTen', chuoiTen);
 // TODO: CODE HERE
 const idx = students.indexOf("Như Ý");
 students.splice(idx, 1);
-console.log("Mảng sau khi xóa Như Ý là: ", students);
+console.log("Mảng sau khi xóa Như Ý là: ", students);1
 
 // Cho 1 array mới
 const students2 = ['Duy Tín', 'Văn Thanh'];
