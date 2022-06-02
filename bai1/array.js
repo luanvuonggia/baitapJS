@@ -29,7 +29,5 @@ const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
 
-students.concat(students2)
-
 console.log('Kết quả:');
-console.log(students);
+console.log(students.concat(students2));
