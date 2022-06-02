@@ -19,8 +19,14 @@ console.log('originalString', originalString);
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
 
 function checkIsDev(s) {
-    //CODE HERE
-    return true;
+    let n = s.split(" ");
+    for(let i = 0; i<length; ++i)
+    {
+        if(n[i] == "Dev"){
+            return true; 
+        }
+    }
+    return false;
 }
 
 console.log('Check is Dev', checkIsDev('123124njanad'));
