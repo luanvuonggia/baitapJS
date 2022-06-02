@@ -26,7 +26,7 @@ console.log('chuoiTen', chuoiTen);
 for( var i = 0; i < students.length; i++) {  
     
     if (students[i] === "Như Ý") { 
-        students.splice(i, 1); 
+        students.splice(i, 1);
     }
 }
 console.log("Mảng sau khi xóa Như Ý là: ", students);
