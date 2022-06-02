@@ -1,7 +1,7 @@
 let originalString = 'Lop hoc web cua Devera';
 
 //TODO: Tính độ dài của chuỗi
-const length = ''; //CODE HERE
+const length = originalString.length; //CODE HERE
 console.log(`Đội dài của chuỗi là ${length}`);
 
 // TODO: lấy ra chữ web bằng hàm slice

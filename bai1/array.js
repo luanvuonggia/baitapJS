@@ -14,7 +14,7 @@ console.log('Vị trí index của Anh Khoa là', viTriCuaKhoa);
 //Thêm Thành Phát vào array
 students.push("Thành Phát");
 
-// TODO: CODE HERE
+students[6] = 'Thành Phát'
 
 // Xoá phần tử đầu tiên ra khỏi array
 students.shift();
@@ -33,7 +33,7 @@ students.splice(index, 1);
 // TODO: CODE HERE
 
 // Cho 1 array mới
-
+console.log(NewArray)
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
@@ -42,4 +42,5 @@ console.log(newArray);
 // TODO: CODE HERE
 
 console.log('Kết quả:');
-console.log(students);
+console.log(students.concat(students2));
+
