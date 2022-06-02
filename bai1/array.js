@@ -23,12 +23,8 @@ console.log('chuoiTen', chuoiTen);
 
 //Xoá bỏ Như Ý ra khỏi array;
 // TODO: CODE HERE
-for( var i = 0; i < students.length; i++) {  
-    
-    if (students[i] === "Như Ý") { 
-        students.splice(i, 1);
-    }
-}
+const idx = students.indexOf("Như Ý");
+students.splice(idx, 1);
 console.log("Mảng sau khi xóa Như Ý là: ", students);
 
 // Cho 1 array mới
