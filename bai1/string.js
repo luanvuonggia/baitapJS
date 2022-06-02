@@ -6,12 +6,13 @@ console.log(`Đội dài của chuỗi là ${length}`);
 
 // TODO: lấy ra chữ web bằng hàm slice
 
-const webString = ''; //CODE HERE
+const webString = originalString.slice(7, 11); //CODE HERE
 
 console.log('webString', webString);
 
 //TODO: thay tất các các khoảng trống trong originalString bằng dấu phẩy
 //CODE HERE
+originalString = originalString.replaceAll(' ', ',');
 
 console.log('originalString', originalString);
 
