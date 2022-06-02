@@ -28,7 +28,7 @@ const new_arr = students.filter(item => item !== valueToRemove);
 console.log(new_arr);
 
 // Cho 1 array mới
-
+console.log(NewArray)
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
@@ -36,4 +36,4 @@ const students2 = ['Duy Tín', 'Văn Thanh'];
 students.push(...students2);
 
 console.log('Kết quả:');
-console.log(students);
+console.log(students.concat(students2));
