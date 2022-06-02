@@ -19,7 +19,7 @@ console.log('originalString', originalString);
 
 function checkIsDev(s) {
     //CODE HERE
-    return true;
+    return true
 }
 
 console.log('Check is Dev', checkIsDev('123124njanad'));
