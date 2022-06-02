@@ -24,6 +24,8 @@ console.log('chuoiTen', chuoiTen);
 
 // TODO: CODE HERE
 
+let i = students.indexOf('Như Ý')
+students.splice(i, 1);
 // Cho 1 array mới
 
 const students2 = ['Duy Tín', 'Văn Thanh'];
