@@ -4,15 +4,15 @@ console.log(`Chiều dài của array students là ${students.lenght}`);
 
 // Tìm vị trí index của Anh Khoa 
 {
-    const viTriCuaKhoa = ""; // TODO: CODE HERE
-    for(let i = 0; i<students.length; i++)
-    {
-        if(students[i] == 'Anh Khoa')
-        {
-            viTriCuaKhoa = i
-        }
+    const viTriCuaKhoa  = students.indexOf('Anh Khoa')
+    // for(let i = 0; i<students.length; i++)
+    // {
+    //     if(students[i] == 'Anh Khoa')
+    //     {
+    //         viTriCuaKhoa = i;
+    //     }
 
-    }
+    // }
     console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 }
 
@@ -28,31 +28,33 @@ console.log(`Chiều dài của array students là ${students.lenght}`);
 }
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 {
-    const chuoiTen = ""; // TODO: CODE HERE
-    for(let i = 0; i<students.length; i++)
-    {
-        if(i!= students.length- 1)
-        {
-            chuoiTen.push(students[i] + '-');
-        }
-        else{
-            chuoiTen.push(students[i]);
-        }
+    // const chuoiTen = ""; // TODO: CODE HERE
+    // for(let i = 0; i<students.length; i++)
+    // {
+    //     if(i!= students.length- 1)
+    //     {
+    //         chuoiTen.push(students[i] + '');
+    //     }
+    //     else{
+    //         chuoiTen.push(students[i]);
+    //     }
 
-    }
-
-console.log('chuoiTen', chuoiTen);
+    // }
+    chuoiTen = students.join('-');
+    console.log('chuoiTen', chuoiTen);
 }
 //Xoá bỏ Như Ý ra khỏi array;
 // TODO: CODE HERE
 {
-    for(let i = 0; i<students.length; i++)
-    {
-        if(students[i] == "Như Ý")
-        {
-            students.splice(i, 1);
-        }
-    }
+    // for(let i = 0; i<students.length; i++)
+    // {
+    //     if(students[i] == "Như Ý")
+    //     {
+    //         students.splice(i, 1);
+    //     }
+    // }
+    const i = students.indexOf("Như Ý")
+    students.splice(i, 1);
     console.log(students)
 }
 
@@ -64,7 +66,7 @@ console.log('chuoiTen', chuoiTen);
 // nối student2 với student
 // TODO: CODE HERE
 
-    students = students.concat(students2); 
+    students.push(...students2);
     console.log('Kết quả:');
     console.log(students);
 }
