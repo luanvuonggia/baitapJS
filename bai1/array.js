@@ -17,7 +17,6 @@ console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 // TODO: CODE HERE
 students.push("Thành Phát");
-
 // Xoá phần tử đầu tiên ra khỏi array
 
 // TODO: CODE HERE
