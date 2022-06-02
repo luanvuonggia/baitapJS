@@ -1,19 +1,22 @@
 const students =  ['Gia Trân', 'Linh Đa', 'Anh Khoa', 'Khánh Hòa', 'Như Ý', 'Lâm Trường'];
 
-console.log(`Chiều dài của array students là ${students.lenght}`);
+console.log(`Chiều dài của array students là ${students.length}`);
 
 // Tìm vị trí index của Anh Khoa 
-const viTriCuaKhoa = ""; // TODO: CODE HERE
+const viTriCuaKhoa = students.indexOf("Anh Khoa");
+ // TODO: CODE HERE
 console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
 
 // TODO: CODE HERE
+    students.push("Thành Phát");
 
 // Xoá phần tử đầu tiên ra khỏi array
-
+   
 // TODO: CODE HERE
-
+    // delete students[0];
+    students.shift();
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 
 const chuoiTen = ""; // TODO: CODE HERE
