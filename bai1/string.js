@@ -18,8 +18,11 @@ console.log('originalString', originalString);
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
 
 function checkIsDev(s) {
-    if(s.indexOf('Dev')){
-    return true;}
+    if(s.indexOf('Dev') != -1){
+        return true;
+    } else {
+        return false;
+    }
 }
 
 console.log('Check is Dev', checkIsDev('123124njanad'));
