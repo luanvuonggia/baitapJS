@@ -1,4 +1,5 @@
 const students =  ['Gia Trân', 'Linh Đa', 'Anh Khoa', 'Khánh Hòa', 'Như Ý', 'Lâm Trường'];
+//
 
 console.log(`Chiều dài của array students là ${students.lenght}`);
 
