@@ -1,15 +1,9 @@
 const students =  ['Gia Trân', 'Linh Đa', 'Anh Khoa', 'Khánh Hòa', 'Như Ý', 'Lâm Trường'];
 
-console.log(`Chiều dài của array students là ${students.lenght}`);
+console.log(`Chiều dài của array students là ${students.length}`);
 
 // Tìm vị trí index của Anh Khoa 
-const viTriCuaKhoa = ""; 
-for (var i=0; i<students.length;i++){
-    if(students[i] == "Anh Khoa"){
-        viTriCuaKhoa = i;
-        break;
-    }
-}
+const viTriCuaKhoa = students.indexOf("Anh Khoa");
 console.log(`Vị trí index của Anh Khoa la ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
