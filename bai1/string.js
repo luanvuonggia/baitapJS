@@ -13,6 +13,8 @@ console.log('webString', webString);
 //TODO: thay tất các các khoảng trống trong originalString bằng dấu phẩy
 //CODE HERE
 
+originalString = originalString.replace(/ /g, ',')
+
 console.log('originalString', originalString);
 
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
