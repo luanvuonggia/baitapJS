@@ -12,7 +12,7 @@ students.push('Thành Phát');
 
 // Xoá phần tử đầu tiên ra khỏi array
 
-delete students[0];
+students.shift();
 
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 
