@@ -6,20 +6,22 @@ console.log(`Đội dài của chuỗi là ${length}`);
 
 // TODO: lấy ra chữ web bằng hàm slice
 
-const webString = originalString.slice(8, 12); //CODE HERE
+const webString = originalString.slice(8, 11); //CODE HERE
 
 console.log("webString", webString);
 
 //TODO: thay tất các các khoảng trống trong originalString bằng dấu phẩy
 //CODE HERE
 
-console.log("originalString", originalString);
+console.log("originalString", originalString.split(" ").join(","));
 
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
 
 function checkIsDev(s) {
   //CODE HERE
-  return true;
+  if (typeof s != "string") return;
+  if (s.includes("Dev")) return true;
+  else return false;
 }
 
 console.log("Check is Dev", checkIsDev("123124njanad"));
