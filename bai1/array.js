@@ -1,5 +1,5 @@
 const students =  ['Gia Trân', 'Linh Đa', 'Anh Khoa', 'Khánh Hòa', 'Như Ý', 'Lâm Trường'];
-
+aaaaaaaaaaaaaaa
 console.log(`Chiều dài của array students là ${students.lenght}`);
 
 // Tìm vị trí index của Anh Khoa 
