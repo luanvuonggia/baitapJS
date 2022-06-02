@@ -4,22 +4,23 @@ console.log(`Chiều dài của array students là ${students.lenght}`);
 
 // Tìm vị trí index của Anh Khoa 
 {
-const viTriCuaKhoa = ""; // TODO: CODE HERE
-for(let i = 0; i<students.length; i++)
-{
-    if(students[i] == 'Anh Khoa')
+    const viTriCuaKhoa = ""; // TODO: CODE HERE
+    for(let i = 0; i<students.length; i++)
     {
-        viTriCuaKhoa = i
-    }
+        if(students[i] == 'Anh Khoa')
+        {
+            viTriCuaKhoa = i
+        }
 
-}
-console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
+    }
+    console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 }
 
 //Thêm Thành Phát vào array
 {
     students.push('Thành Phát')
     console.log(students)
+}
 // Xoá phần tử đầu tiên ra khỏi array
 {
     students.shift()
@@ -27,18 +28,18 @@ console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 }
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 {
-const chuoiTen = ""; // TODO: CODE HERE
-for(let i = 0; i<students.length; i++)
-{
-    if(i!= students.length- 1)
+    const chuoiTen = ""; // TODO: CODE HERE
+    for(let i = 0; i<students.length; i++)
     {
-        chuoiTen.push(students[i] + '-');
-    }
-    else{
-        chuoiTen.push(students[i]);
-    }
+        if(i!= students.length- 1)
+        {
+            chuoiTen.push(students[i] + '-');
+        }
+        else{
+            chuoiTen.push(students[i]);
+        }
 
-}
+    }
 
 console.log('chuoiTen', chuoiTen);
 }
@@ -57,12 +58,12 @@ console.log('chuoiTen', chuoiTen);
 
 
 // Cho 1 array mới
-
-const students2 = ['Duy Tín', 'Văn Thanh'];
+{
+    const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
 // TODO: CODE HERE
-{
+
     students = students.concat(students2); 
     console.log('Kết quả:');
     console.log(students);
