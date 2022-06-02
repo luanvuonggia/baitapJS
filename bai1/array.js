@@ -24,8 +24,6 @@ console.log('chuoiTen', chuoiTen);
 
 
 // TODO: CODE HERE
-//const viTriremove = students.indexOf("Như Ý");
-
 const newarray = students.filter(item => item != "Như Ý" );
 console.log('chuoi moi: ', newarray);
 // Cho 1 array mới
@@ -35,6 +33,6 @@ const students2 = ['Duy Tín', 'Văn Thanh'];
 // nối student2 với student
 
 // TODO: CODE HERE
-
+const arrayjoin = students.concat(students2);
 console.log('Kết quả:');
-console.log(students);
+console.log(arrayjoin);
