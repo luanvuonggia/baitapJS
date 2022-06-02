@@ -6,6 +6,7 @@ const viTriCuaKhoa = students.indexOf("Anh Khoa"); // TODO: CODE HERE
 console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
+console.log('Good luck')
 
 students[6] = 'Thành Phát'
 
