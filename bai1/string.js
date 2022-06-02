@@ -1,25 +1,26 @@
 let originalString = 'Lop hoc web cua Devera';
 
 //TODO: Tính độ dài của chuỗi
-const length = ''; //CODE HERE
+const length = originalString.length; //CODE HERE
 console.log(`Đội dài của chuỗi là ${length}`);
 
 // TODO: lấy ra chữ web bằng hàm slice
 
-const webString = ''; //CODE HERE
+const webString = originalString.slice(8, 12); //CODE HERE
 
 console.log('webString', webString);
 
 //TODO: thay tất các các khoảng trống trong originalString bằng dấu phẩy
-//CODE HERE
 
-console.log('originalString', originalString);
+console.log('originalString', originalString.replace(/ /g, ','));
 
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
 
 function checkIsDev(s) {
-    //CODE HERE
-    return true;
+    if(s.includes('Dev'))
+        return true;
+    else
+        return false;
 }
 
 console.log('Check is Dev', checkIsDev('123124njanad'));
