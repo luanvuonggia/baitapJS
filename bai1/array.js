@@ -8,7 +8,8 @@ console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
 
-students[6] = 'Thành Phát'
+students.push("Thành Phát");
+console.log(students);
 
 // Xoá phần tử đầu tiên ra khỏi array
 
