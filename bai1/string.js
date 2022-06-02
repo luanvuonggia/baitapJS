@@ -21,6 +21,11 @@ console.log('originalString', originalString);
 
 function checkIsDev(s) {
     //CODE HERE
+    if (s.includes("Dev") == true) {
+        return true;
+    } else {
+        return false;
+    }
     return true;
 }
 
