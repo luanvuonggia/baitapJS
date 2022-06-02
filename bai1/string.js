@@ -25,7 +25,7 @@ let originalString = 'Lop hoc web cua Devera';
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
 {
     function checkIsDev(s) {
-        if (s.startsWith('Dev'))
+        if (s.includes('Dev') == true)
         {
             return true;
         }
