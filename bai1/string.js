@@ -18,11 +18,10 @@ console.log('originalString', originalString);
 
 function checkIsDev(s) 
 {
-    originalString.split(" ");
-    if(originalString.includes('dev'))
-    
+    s.split(" ")
+    if(s.includes('Dev'))
     {
-            return true;
+        return true;
     }
     else
     {
