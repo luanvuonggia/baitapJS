@@ -19,7 +19,7 @@ console.log('originalString', originalString);
 // Viết 1 hàm kiểm tra xem chuỗi truyền vào có chứa từ 'Dev' hay không
 
 function checkIsDev(s) {
-    if (String(s).includes('Dev'))
+    if (s.includes('Dev'))
         return true;
     else
         return false;
