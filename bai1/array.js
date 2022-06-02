@@ -33,6 +33,7 @@ const students2 = ['Duy Tín', 'Văn Thanh'];
 // nối student2 với student
 
 // TODO: CODE HERE
+students.push(students2)
 
 console.log('Kết quả:');
 console.log(students);
