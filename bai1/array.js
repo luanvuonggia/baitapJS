@@ -23,13 +23,13 @@ students.shift();
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 
 const chuoiTen = ""; // TODO: CODE HERE
-let newString = students.join("-");
+let newString = students.join(" - ");
 
-console.log(newString);
-console.log('chuoiTen', chuoiTen);
+console.log('chuoiTen', newString);
 
 //Xoá bỏ Như Ý ra khỏi array;
-
+const index = students.indexOf("Như Ý");
+students.splice(index, 1);
 // TODO: CODE HERE
 
 // Cho 1 array mới
@@ -37,7 +37,8 @@ console.log('chuoiTen', chuoiTen);
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
-
+let newArray = students.concat(students2);
+console.log(newArray);
 // TODO: CODE HERE
 
 console.log('Kết quả:');
