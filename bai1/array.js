@@ -3,7 +3,7 @@ const students =  ['Gia Trân', 'Linh Đa', 'Anh Khoa', 'Khánh Hòa', 'Như Ý'
 console.log(`Chiều dài của array students là ${students.length}`);
 
 // Tìm vị trí index của Anh Khoa 
-const viTriCuaKhoa = students.indexOf('Anhh Khoa'); 
+const viTriCuaKhoa = students.indexOf('Anh Khoa'); 
 console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
