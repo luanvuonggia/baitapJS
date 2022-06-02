@@ -24,11 +24,8 @@ console.log('chuoiTen', chuoiTen);
 //Xoá bỏ Như Ý ra khỏi array;
 
 // TODO: CODE HERE
-for(let i=0;i<students.length;i++)
-{
-    if(students[i]=="Như Ý")
-        students.splice(i,1)
-}
+students.splice(students.indexOf("Như Ý"),1);
+
 
 // Cho 1 array mới
 
