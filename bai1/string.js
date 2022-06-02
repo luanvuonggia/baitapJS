@@ -24,7 +24,6 @@ console.log("originalString", originalString);
 function checkIsDev(s) {
   //CODE HERE
   return s.includes("Dev");
-  return true;
 }
 
 console.log("Check is Dev", checkIsDev("123124njanad"));
