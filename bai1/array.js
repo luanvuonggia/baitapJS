@@ -28,15 +28,15 @@ students.splice(students.indexOf('Như Ý'),1);
 
 
 // Cho 1 array mới
-
+console.log(NewArray)
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
 
 // TODO: CODE HERE
-students.push(...students2);
+//students.push(...students2);
 
 console.log('Kết quả:');
-console.log(students);
+console.log(students.concat(students2));
 
 //gitmoji.dev
