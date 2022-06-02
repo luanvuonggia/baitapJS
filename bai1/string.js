@@ -6,7 +6,7 @@ console.log(`Đội dài của chuỗi là ${length}`);
 
 // TODO: lấy ra chữ web bằng hàm slice
 
-const webString = ''; //CODE HERE
+const webString = originalString.slice(8, 11); //CODE HERE
 
 console.log('webString', webString);
 
