@@ -17,6 +17,6 @@ console.log(`Mảng mới sau khi xóa: ${newArray}`);
 // Cho 1 array mới
 const students2 = ['Duy Tín', 'Văn Thanh'];
 // nối student2 với student
-const ConcatArray = students2.concat(students)
+students.push(...students2)
 console.log('Kết quả mảng mới:');
-console.log(ConcatArray);
+console.log(students);
