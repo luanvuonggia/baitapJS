@@ -24,7 +24,7 @@ const newStudents = students.filter(function(s){
 console.log(`Kết quả xóa: ${newStudents}`);
 
 // Cho 1 array mới
-
+console.log(NewArray)
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
