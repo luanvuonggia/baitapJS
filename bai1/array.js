@@ -32,12 +32,12 @@ for( var i = 0; i < students.length; i++) {
 console.log("Mảng sau khi xóa Như Ý là: ", students);
 
 // Cho 1 array mới
-
 const students2 = ['Duy Tín', 'Văn Thanh'];
 
 // nối student2 với student
-
 // TODO: CODE HERE
+const finalStudent = students2.concat(students)
+console.log("Mảng mới sau khi nối student2 với student 1 là: ", finalStudent);
 
 console.log('Kết quả:');
 console.log(students);
