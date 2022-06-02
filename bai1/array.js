@@ -38,3 +38,5 @@ students.push(...students2);
 
 console.log('Kết quả:');
 console.log(students);
+
+//gitmoji.dev
