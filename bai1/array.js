@@ -8,11 +8,11 @@ console.log(`Vị trí index của Anh Khoa là ${viTriCuaKhoa}`);
 
 //Thêm Thành Phát vào array
 
-students.push('Thành Phát')
+students.push('Thành Phát');
 
 // Xoá phần tử đầu tiên ra khỏi array
 
-// TODO: CODE HERE
+delete students[0];
 
 // Tạo một string mới có chứa tên của các bạn trong array và nối với nhau bằng dấu gạch - ( ví dụ Gia Trân - Linh Đa - Anh Khoa - ...)
 
