@@ -41,7 +41,12 @@ function getEmail(users) {
     // }
 
     // Cach 2
-    email = users.map(({ email }) => email);
+    // email = users.map(({ email }) => email);
+
+    //Cach 3
+    email = users.map(obj => obj.email);
+
+    console.log("Email: ", email);
     return email;
 }
 
