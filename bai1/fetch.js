@@ -45,8 +45,6 @@ function getEmail(users) {
 
     //Cach 3
     email = users.map(obj => obj.email);
-
-    console.log("Email: ", email);
     return email;
 }
 
