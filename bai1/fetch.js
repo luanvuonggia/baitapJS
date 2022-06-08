@@ -13,10 +13,11 @@ await getUsers().then((data) => {
 // Lọc ra những bạn là nữ
 function filterFemale(users) {
     // Code here
-    return [];
+    return users.filter(user => user.gender == 'female');
 }
 
 const femaleList = filterFemale(users);
+console.log(femaleList);
 
 // Tạo ra một array chứa tất cả email của user
 
