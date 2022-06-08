@@ -23,7 +23,8 @@ console.log(femaleList);
 
 function getEmail(users) {
     // Code here
-    return [];
+    return users.map(user => user.email);
 }
 
 const email = getEmail(users);
+console.log(email);
