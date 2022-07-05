@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: #1C233D;
+            color: white;
+        }
+
+        .nav {}
+
+        .nav li {
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn {
+            color: white;
+            background-image: linear-gradient(to right, #E12D2D, #1254FE);
+            border-radius: 5px;
+            width: 93px;
+            height: 30px;
+            border: none;
+            margin-left: 62px;
+
+        }
+
+        .search-input {
+            width: 210px;
+            height: 30px;
+            border: 1px solid #E5E5E5;
+            border-radius: 3px;
+            background-color: transparent;
+            background: url('./assets/search-icon.svg') no-repeat left;
+            background-size: 10px;
+            background-position: 194px 10px;
+        }
+
+        .search-input::placeholder {
+            padding-left: 7px;
+            color: white;
+        }
+
+        .left,
+        .right {
+            height: 400px;
+        }
+
+        .left {
+            float: left;
+            width: 50%;
+        }
+
+        .right {
+            float: right;
+            width: 50%;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .left,
+            .right {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        /* .search-container {
+            position: relative;
+        } */
+
+        /* .search-icon {
+            position: fixed;
+            left: 250px;
+        } */
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#clients">Our Clients</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <input class="search-input" placeholder="Search"></input>
+            <button class="btn">Connect</button>
+        </ul>
+    </header>
+    <section>
+        <div class="intro">
+            <div class="left">
+                <div>
+                    Discover, Sell & Collect Rare NFTs
+                </div>
+                <div>
+                    Digital marketplace for crypto collections and
+                    non-fungible tokens (NFTs)
+                </div>
+            </div>
+            <div class="right">
+                <img src="./assets/devera.png">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./assets/icon.svg"></img>
+            <img src="./assets/devera-logo.png"></img>
+            <img height="168" src="./assets/lecle.png"></img>
+        </div>
+    </section>
+    <footer>
+    </footer>
+
+</body>
+
+</html>

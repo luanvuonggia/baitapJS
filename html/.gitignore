@@ -1,0 +1,33 @@
+node_modules/
+.idea/
+.serverless/
+.vscode/ 
+.fusebox/
+.dynamodb/
+
+.dist
+
+*.log
+
+.env.*.local
+
+# boilerplate internals
+generated-cra-app
+.cra-template-rb
+template
+
+# Don't check auto-generated stuff into git
+coverage/
+build/
+stats.json
+.pnp
+.pnp.js
+
+logs/
+report.html
+
+# Terraform stuff
+*.tfstate
+*.tfstate.backup
+*.hcl
+.terraform/
