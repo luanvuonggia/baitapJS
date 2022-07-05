@@ -3,9 +3,12 @@
 
 <head>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600&display=swap');
+
         body {
             background-color: #1C233D;
             color: white;
+            font-family: 'Space Grotesk';
         }
 
         .nav {}
@@ -72,14 +75,26 @@
             }
         }
 
-        /* .search-container {
-            position: relative;
-        } */
+        .discover-btn {
+            width: 199px;
+            height: 40px;
+            background: #8E99F8;
+            border-radius: 5px;
+            border: none;
+            color: white;
+        }
 
-        /* .search-icon {
-            position: fixed;
-            left: 250px;
-        } */
+        .logo {
+            float: right;
+            align-items: center;
+        }
+
+        .discover-text {
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 77px;
+            font-family: 'Space Grotesk';
+        }
     </style>
 </head>
 
@@ -97,16 +112,21 @@
     <section>
         <div class="intro">
             <div class="left">
-                <div>
+                <div class="discover-text">
                     Discover, Sell & Collect Rare NFTs
                 </div>
                 <div>
                     Digital marketplace for crypto collections and
                     non-fungible tokens (NFTs)
                 </div>
+                <div>
+                    <button class="discover-btn">
+                        Discover Now
+                    </button>
+                </div>
             </div>
             <div class="right">
-                <img src="./assets/devera.png">
+                <img width="505" height="513" src="./assets/devera.png">
             </div>
         </div>
         <div class="logo">
