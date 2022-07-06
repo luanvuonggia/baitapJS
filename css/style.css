@@ -20,7 +20,10 @@ nav {
     justify-content: space-between;
     align-items: center;
 }
-
+nav li:hover {
+    font-weight: 500;
+    cursor: pointer;
+}
 ul {
     display: flex;
     justify-content: space-between;
@@ -44,6 +47,11 @@ h3 {
     line-height: 26px;
     font-weight: 500;
 }
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
 .content__info h2 {
     font-weight: 700;
     font-size: 48px;
@@ -65,7 +73,6 @@ h3 {
     border-radius: 5px;
 }
 
-
 input::placeholder {
     color: white;
     font-size: 10px;
@@ -80,21 +87,22 @@ input::placeholder {
     margin-top: 0;
 }
 
-/* .search {
-    border: 1px solid #E5E5E5;
+.search {
+    /* border: 1px solid #E5E5E5;
     border-radius: 3px;
     width: 210px;
-    height: 30px;
+    height: 30px; */
     position: relative;
-} */
+}
 
-/* .search img {
+.search img:last-child {
     position: absolute;
-} */
+    right: 11px;
+    top: 9px;
+}
 
 .search_input {
     box-sizing: border-box;
-    /* position: absolute; */
     left: 584px;
     top: 43px;
     background-color: #1C233D;
@@ -102,7 +110,7 @@ input::placeholder {
     border-radius: 3px;
     width: 210px;
     height: 30px;
-    background: url(./assets/search-icon.svg) no-repeat right;
+    color: #EBEDFF;
 }
 
 .connect {
@@ -111,7 +119,7 @@ input::placeholder {
     height: 30px;
     left: 856px;
     top: 43px;
-    background: linear-gradient(85.76deg, rgba(1, 72, 255, 0.0945738) -105.02%, #E12D2D 10.94%, rgba(0, 81, 255, 0) 121.57%);
+    background: linear-gradient(90deg, #E12D2D 0%, #1254FE 100%);
     border-radius: 5px;
     border: none;
     color: white;
@@ -156,6 +164,7 @@ input::placeholder {
     gap: 32px;
 }
 
+
 /* -------main------- */
 
 main {
@@ -176,6 +185,11 @@ main {
     font-size: 10px;
     line-height: 13.02px;
     font-family: 'DM Mono';
+}
+.container_categories li:hover {
+    background-color: #1C233D;
+    border: 1px solid #8E99F8;
+    cursor: pointer;
 }
 
 .container_categories #cate_select {
@@ -200,6 +214,10 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 19px;
+}
+.card:hover {
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 .card img {
@@ -283,6 +301,9 @@ main {
     background-color: #8E99F8;
     color: #EBEDFF;
 }
+
+
+
 /* -------footer------- */
 
 footer {
@@ -338,8 +359,16 @@ footer {
 
 .feature__content li {
     margin-left: 0;
+}
+
+.feature__content li a {
     line-height: 20.42px;
     font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+.feature__content li a:hover {
+    color: #8E99F8;
 }
 
 .policy {
