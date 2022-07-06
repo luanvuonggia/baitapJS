@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&family=Poppins:wght@500&family=Roboto+Mono:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #1C233D;
+    color: white;
+}
+
+header {
+    margin: 40px auto;
+    width: 1024px;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav li:hover {
+    font-weight: 500;
+    cursor: pointer;
+}
+ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    list-style: none;
+    margin-left: 26px;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 60px;
+    margin-bottom: 0;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 500;
+}
+
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+.content__info h2 {
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+.content__info span {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 17.86px;
+    color: #E5E5E5;
+}
+
+.discover_now {
+    background: #8E99F8;
+    padding: .4rem 1.4rem;
+    color: white;
+    font-family: 'Space Grotesk';
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: white;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 12.76px;
+}
+
+.logo {
+    font-size: 25px;
+    line-height: 31.9px;
+    font-weight: 500;
+    margin-top: 0;
+}
+
+.search {
+    /* border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    width: 210px;
+    height: 30px; */
+    position: relative;
+}
+
+.search img:last-child {
+    position: absolute;
+    right: 11px;
+    top: 9px;
+}
+
+.search_input {
+    box-sizing: border-box;
+    left: 584px;
+    top: 43px;
+    background-color: #1C233D;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    width: 210px;
+    height: 30px;
+    color: #EBEDFF;
+}
+
+.connect {
+    /* position: absolute; */
+    width: 93px;
+    height: 30px;
+    left: 856px;
+    top: 43px;
+    background: linear-gradient(90deg, #E12D2D 0%, #1254FE 100%);
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-family: 'Space Grotesk';
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.header_infor {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.header_content {
+    margin-right: 1.9rem;
+    width: 43%;
+}
+
+.header_content p {
+    font-size: 13px;
+    line-height: 19.5px;
+    font-weight: 500;
+    font-family: 'Poppins';
+}
+
+.header_infor .img_devera {
+    width: 57%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.content__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header_brand {
+    display: flex;
+    justify-content: flex-end;
+    gap: 32px;
+}
+
+
+/* -------main------- */
+
+main {
+    border-top: 1px solid rgba(92, 82, 82, 0.21);
+}
+
+.container {
+    width: 1024px;
+    margin: auto;
+}
+
+.container_categories li{
+    border: 1px solid #545C71;
+    background-color: #545C71;
+    border-radius: 5px;
+    padding: 10px 23px;
+    margin-left: 0;
+    font-size: 10px;
+    line-height: 13.02px;
+    font-family: 'DM Mono';
+}
+.container_categories li:hover {
+    background-color: #1C233D;
+    border: 1px solid #8E99F8;
+    cursor: pointer;
+}
+
+.container_categories #cate_select {
+    background-color: #8E99F8;
+}
+
+.container_content {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    row-gap: 58px;
+    margin-top: 51px;
+    justify-items: center;
+}
+
+.card {
+    width: 281px;
+    height: 323px;
+    left: 361px;
+    background: #30384D;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 19px;
+}
+.card:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.card img {
+    width: 222px;
+    height: 223px;
+}
+
+.card_author {
+    display: flex;
+    width: 80%;
+}
+
+.card_author .author__info {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+}
+
+.author__info p {
+    font-size: 10px;
+    line-height: 12.76px;
+    font-weight: 400;
+    margin: 0 0 4px;
+}
+
+.author__info p span {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.card_author img {
+    width: 28px;
+    height: 29px;
+}
+
+.card_cost {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 4px;
+}
+
+.card_cost img {
+    width: 12px;
+    height: 12px;
+}
+
+.card_cost span {
+    font-family: 'DM Mono';
+    width: 85%;
+    font-weight: 500;
+    font-size: 10px;
+}
+
+.pagination {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.pagination button{
+    border: 1px solid #8E99F8;
+    background-color: #1C233D;
+    color: #8E99F8;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    width: 36px;
+    height: 36px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+.pagination #pagi_select {
+    background-color: #8E99F8;
+    color: #EBEDFF;
+}
+
+
+
+/* -------footer------- */
+
+footer {
+    width: 1024px;
+    margin: 97px auto 90px;
+}
+
+.footer_container {
+    display: flex;
+    flex-direction: row;
+    gap: 76px;
+}
+
+.footer_devestore {
+    width: 50%;
+}
+
+.footer_devestore .logo {
+    font-size: 40px;
+}
+
+.footer_devestore p{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 9px 0 27px;
+}
+
+.footer_devestore .social {
+    display: flex;
+    gap: 16px;
+}
+
+.footer_features {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.feature h3 {
+    font-weight: 700;
+    line-height: 25.52px;
+    margin: 0;
+}
+
+.feature__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-top: 12px;
+}
+
+.feature__content li {
+    margin-left: 0;
+}
+
+.feature__content li a {
+    line-height: 20.42px;
+    font-size: 16px;
+    text-decoration: none;
+    color: white;
+}
+.feature__content li a:hover {
+    color: #8E99F8;
+}
+
+.policy {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 47px;
+    color: #545C71;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.policy_terms {
+    display: flex;
+    flex-direction: row;
+    gap: 31px;
+}
