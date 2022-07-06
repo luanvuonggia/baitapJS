@@ -1,123 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <style>
-        body {
-            background-color: #1C233D;
-            color: white;
-        }
-
-        .nav {}
-
-        .nav li {
-            display: inline-block;
-            font-size: 20px;
-            padding: 20px;
-        }
-
-        a {
-            text-decoration: none;
-            color: white;
-        }
-
-        .btn {
-            color: white;
-            background-image: linear-gradient(to right, #E12D2D, #1254FE);
-            border-radius: 5px;
-            width: 93px;
-            height: 30px;
-            border: none;
-            margin-left: 62px;
-
-        }
-
-        .search-input {
-            width: 210px;
-            height: 30px;
-            border: 1px solid #E5E5E5;
-            border-radius: 3px;
-            background-color: transparent;
-            background: url('./assets/search-icon.svg') no-repeat left;
-            background-size: 10px;
-            background-position: 194px 10px;
-        }
-
-        .search-input::placeholder {
-            padding-left: 7px;
-            color: white;
-        }
-
-        .left,
-        .right {
-            height: 400px;
-        }
-
-        .left {
-            float: left;
-            width: 50%;
-        }
-
-        .right {
-            float: right;
-            width: 50%;
-        }
-
-        @media only screen and (max-width: 768px) {
-
-            .left,
-            .right {
-                float: none;
-                width: 100%;
-            }
-        }
-
-        /* .search-container {
-            position: relative;
-        } */
-
-        /* .search-icon {
-            position: fixed;
-            left: 250px;
-        } */
-    </style>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFT Landing Page Devera</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="shortcut icon" href="./assets/img/android-icon-48x48.png" />
+  </head>
+  <body>
     <header>
-        <ul class="nav">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#clients">Our Clients</a></li>
-            <li><a href="#contact">Contact Us</a></li>
-            <input class="search-input" placeholder="Search"></input>
-            <button class="btn">Connect</button>
-        </ul>
+      <a class="header-logo" href="#">Devestore</a>
+      <ul class="header-list">
+        <li class="header-list-item active">Explore</li>
+        <li class="header-list-item">Marketplace</li>
+        <li class="header-list-item">Artist</li>
+        <li class="header-list-item">Collection</li>
+      </ul>
+      <div class="header-search">
+        <input type="text" placeholder="Search" class="input-search" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <button class="connect-btn">Connect</button>
     </header>
-    <section>
-        <div class="intro">
-            <div class="left">
-                <div>
-                    Discover, Sell & Collect Rare NFTs
-                </div>
-                <div>
-                    Digital marketplace for crypto collections and
-                    non-fungible tokens (NFTs)
-                </div>
+    <div class="content">
+      <div class="content-container-1">
+        <div class="content-info">
+          <div class="content-title">Discover, Sell & Collect Rare NFTs</div>
+          <div class="content-desc">
+            Digital marketplace for crypto collections and non-fungible tokens
+            (NFTs)
+          </div>
+          <button class="discover-btn">Discover Now</button>
+          <div class="content-number">
+            <div class="content-number-1">
+              <div class="content-number-title">460 301</div>
+              <div class="content-number-desc">NFTs</div>
             </div>
-            <div class="right">
-                <img src="./assets/devera.png">
+            <div class="content-number-2">
+              <div class="content-number-title">2857</div>
+              <div class="content-number-desc">Artists</div>
             </div>
+          </div>
         </div>
-        <div class="logo">
-            <img src="./assets/icon.svg"></img>
-            <img src="./assets/devera-logo.png"></img>
-            <img height="168" src="./assets/lecle.png"></img>
+        <div class="content-image"></div>
+      </div>
+      <div class="logo-group">
+        <div class="logo-item">
+          <img src="./assets/img/logo-dark-1.png" alt="" />
         </div>
-    </section>
+        <div class="logo-item">
+          <img src="./assets/img/devera-logo.png" alt="" />
+        </div>
+        <div class="logo-item">
+          <img src="./assets/img/Lecle-logo-yellow-1.png" alt="" />
+        </div>
+      </div>
+      <div class="content-container-2">
+        <div class="trending-title">Super hot</div>
+        <div class="select-btn-list">
+          <button class="select-btn-item">Music</button>
+          <button class="select-btn-item active">Art</button>
+          <button class="select-btn-item">Sport</button>
+          <button class="select-btn-item">Photography</button>
+          <button class="select-btn-item">Virtual Reality</button>
+          <button class="select-btn-item">Videos</button>
+          <button class="select-btn-item">...</button>
+        </div>
+        <div class="card-group">
+          <div class="card">
+            <img src="./assets/img/image 3.png" alt="" class="card-img" />
+            <div class="card-info">
+              <div class="card-name">
+                <span>Crazy Apes</span><br />
+                <span>Created by <strong>hx45...250e </strong></span>
+              </div>
+              <img
+                src="./assets/img/Ellipse 7.png"
+                alt=""
+                class="card-avatar"
+              />
+            </div>
+            <div class="card-footer">
+              <img src="./assets/img/Ellipse 6.png" alt="" />
+              <span>3.90 ICX</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/img/image35.png" alt="" class="card-img" />
+            <div class="card-info">
+              <div class="card-name">
+                <span>Crazy Apes</span><br />
+                <span>Created by <strong>hx45...250e </strong></span>
+              </div>
+              <img
+                src="./assets/img/Ellipse 7.png"
+                alt=""
+                class="card-avatar"
+              />
+            </div>
+            <div class="card-footer">
+              <img src="./assets/img/Ellipse 6.png" alt="" />
+              <span>3.90 ICX</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/img/image3-1.png" alt="" class="card-img" />
+            <div class="card-info">
+              <div class="card-name">
+                <span>Crazy Apes</span><br />
+                <span>Created by <strong>hx45...250e </strong></span>
+              </div>
+              <img
+                src="./assets/img/Ellipse 7.png"
+                alt=""
+                class="card-avatar"
+              />
+            </div>
+            <div class="card-footer">
+              <img src="./assets/img/Ellipse 6.png" alt="" />
+              <span>3.90 ICX</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/img/image32.png" alt="" class="card-img" />
+            <div class="card-info">
+              <div class="card-name">
+                <span>Crazy Apes</span><br />
+                <span>Created by <strong>hx45...250e </strong></span>
+              </div>
+              <img
+                src="./assets/img/Ellipse 7.png"
+                alt=""
+                class="card-avatar"
+              />
+            </div>
+            <div class="card-footer">
+              <img src="./assets/img/Ellipse 6.png" alt="" />
+              <span>3.90 ICX</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/img/image33.png" alt="" class="card-img" />
+            <div class="card-info">
+              <div class="card-name">
+                <span>Crazy Apes</span><br />
+                <span>Created by <strong>hx45...250e </strong></span>
+              </div>
+              <img
+                src="./assets/img/Ellipse 7.png"
+                alt=""
+                class="card-avatar"
+              />
+            </div>
+            <div class="card-footer">
+              <img src="./assets/img/Ellipse 6.png" alt="" />
+              <span>3.90 ICX</span>
+            </div>
+          </div>
+          <div class="card">
+            <img src="./assets/img/image34.png" alt="" class="card-img" />
+            <div class="card-info">
+              <div class="card-name">
+                <span>Crazy Apes</span><br />
+                <span>Created by <strong>hx45...250e </strong></span>
+              </div>
+              <img
+                src="./assets/img/Ellipse 7.png"
+                alt=""
+                class="card-avatar"
+              />
+            </div>
+            <div class="card-footer">
+              <img src="./assets/img/Ellipse 6.png" alt="" />
+              <span>3.90 ICX</span>
+            </div>
+          </div>
+        </div>
+        <div class="page-btn-group">
+          <div class="page-btn-item">
+            <i class="fa-solid fa-angles-left"></i>
+          </div>
+          <div class="page-btn-item">
+            <i class="fa-solid fa-angle-left"></i>
+          </div>
+          <div class="page-btn-item">
+            <span>1</span>
+          </div>
+          <div class="page-btn-item active">
+            <span>2</span>
+          </div>
+          <div class="page-btn-item">
+            <span>3</span>
+          </div>
+          <div class="page-btn-item">
+            <i class="fa-solid fa-angle-right"></i>
+          </div>
+          <div class="page-btn-item">
+            <i class="fa-solid fa-angles-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer>
+      <div class="main-footer">
+        <div class="main-footer-item" style="align-items: unset">
+          <div class="title-footer">Devestore</div>
+          <div class="desc-footer">
+            Amazing NFTs marketplace, Authentic and unique digital creation.
+          </div>
+          <div class="logo-social-network">
+            <img src="./assets/img/Ellipse 18.png" alt="" />
+            <img src="./assets/img/Ellipse 19.png" alt="" />
+            <img src="./assets/img/Ellipse 20.png" alt="" />
+          </div>
+          <div class="extra-footer-item">
+            Copyright 2022 Devera, All right reserved.
+          </div>
+        </div>
+        <div class="main-footer-item">
+          <div class="policy-title">Marketplace</div>
+          <span>Explore</span>
+          <span>NFTs</span>
+          <span>Collectibles</span>
+          <span>Virtual Reality</span>
+          <div class="extra-footer-item" style="visibility: hidden">.</div>
+        </div>
+        <div class="main-footer-item">
+          <div class="policy-title">Resources</div>
+          <span>Help Center</span>
+          <span>Partners</span>
+          <span>Blog</span>
+          <span>Newsletter</span>
+          <div class="extra-footer-item">Privacy Policy</div>
+        </div>
+        <div class="main-footer-item">
+          <div class="policy-title">Company</div>
+          <span>About Us</span>
+          <span>Careers</span>
+          <span>Support</span>
+          <span>Newsletter</span>
+          <div class="extra-footer-item">Terms & Conditions</div>
+        </div>
+      </div>
     </footer>
-
-</body>
-
+  </body>
 </html>
