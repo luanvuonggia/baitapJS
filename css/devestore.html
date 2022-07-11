@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        body {
+            background-color: #20243c;
+            color: white;
+            padding: 60px;
+
+        }
+
+        .nav li {
+            display: inline-block;
+            font-size: 20px;
+            padding: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn {
+            color: white;
+            background-image: linear-gradient(to right, #E12D2D, #1254FE);
+            border-radius: 5px;
+            width: 93px;
+            height: 30px;
+            border: none;
+            margin-left: 62px;
+
+        }
+
+        .search-input {
+            width: 210px;
+            height: 30px;
+            margin: 0px 0px 10px 40px;
+            border: 1px solid #E5E5E5;
+            border-radius: 3px;
+            background-color: transparent;
+            background: url('./assets/search-icon.svg') no-repeat left;
+            background-size: 10px;
+            background-position: 194px 10px;
+        }
+
+        .search-input::placeholder {
+            padding-left: 7px;
+            color: white;
+        }
+
+        .left,
+        .right {
+            height: 400px;
+        }
+
+        .left {
+            float: left;
+            width: 50%;
+        }
+
+        .right {
+            float: right;
+            width: 50%;
+        }
+
+        @media only screen and (max-width: 768px) {
+
+            .left,
+            .right {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        .title {
+            width: 400px;
+            height: 231px;
+
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 60px;
+            line-height: 77px;
+        }
+
+        .describe {
+            width: 300px;
+            height: 40px;
+            left: 62px;
+            top: 381px;
+
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 20px;
+        }
+
+        .logo {
+            float: right;
+            margin: 60px;
+            margin-top: 120px
+        }
+
+        .logo img {
+            vertical-align: middle;
+            margin-right: 32px;
+        }
+
+        .filter-name {
+            width: 97px;
+            height: 26px;
+            margin-top: 125px;
+
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        .categories {
+            display: inline-block;
+            margin: 50px;
+        }
+
+        .categories ul {
+            list-style-type: none;
+        }
+
+        .categories li {
+            display: inline-block;
+            margin-left: 40px;
+            margin-bottom: 30px;
+        }
+
+        .categories button {
+            padding: 10px 23px;
+            height: 33px;
+            left: 303px;
+            top: 920px;
+            text-align: center;
+            background: #30384D;
+            border-radius: 5px;
+            border: none;
+            font-family: 'DM Mono';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 13px;
+            color: #FFFFFF;
+        }
+
+        .products {
+            margin-left: 90px;
+        }
+
+        .products-1 {
+            width: 281px;
+            height: 323px;
+            background: #30384D;
+            border-radius: 5px;
+            margin: 0px 38px 58px 0px;
+            padding: 0px 37px 23px 22px;
+            box-sizing: border-box;
+            display: inline-block;
+        }
+
+
+        .product-name {
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 13px;
+        }
+
+
+        .product-author {
+            margin: 4px 0px;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 13px;
+        }
+
+        .product-price span {
+            width: 52px;
+            height: 15px;
+            font-family: 'DM Mono';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 13px;
+
+        }
+
+        .product-price img {
+            vertical-align: middle;
+        }
+
+        .page-number {
+            text-align: center;
+            margin: 25px 0px 50px 0px;
+        }
+
+        .page-number button {
+            box-sizing: border-box;
+            background-color: #20243c;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            gap: 8px;
+            color: #99A3FF;
+            width: 36px;
+            height: 36px;
+            border: 1px solid #99A3FF;
+            border-radius: 4px;
+        }
+
+        .first h1 {
+            width: 195px;
+            height: 51px;
+            margin-bottom: 9px;
+            margin-top: 0px;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 40px;
+            line-height: 51px;
+            color: #E5E5E5;
+        }
+
+        .first p {
+            width: 381px;
+            height: 40px;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .first img {
+            width: 29px;
+            height: 28px;
+            margin-right: 16px;
+            margin-bottom: 39px;
+        }
+
+        .column {
+            display: inline-block;
+            margin: 50px;
+            vertical-align: top;
+        }
+
+        .extension {
+            text-align: center;
+
+        }
+
+        .extension h1 {
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        .extension p {
+            margin: 0px 0px 5px 0px;
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .info-footer span {
+            font-family: 'Space Grotesk';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 18px;
+            color: #545C71;
+            margin: 30px;
+        }
+        .info-footer {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="nav">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#clients">Our Clients</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <input class="search-input" placeholder="Search"></input>
+            <button class="btn">Connect</button>
+        </ul>
+    </header>
+    <section>
+        <div class="intro">
+            <div class="left">
+                <div class="title">
+                    Discover, Sell & Collect Rare NFTs
+                </div>
+                <div class="describe">
+                    Digital marketplace for crypto collections and
+                    non-fungible tokens (NFTs)
+                </div>
+            </div>
+            <div class="right">
+                <img src="./assets/devera.png">
+            </div>
+        </div>
+        <div class="logo">
+            <img src="./assets/icon.svg"></img>
+            <img src="./assets/devera-logo.png"></img>
+            <img height="168" src="./assets/lecle.png"></img>
+        </div>
+
+        <div class="categories">
+            <span class="filter-name">Super Hot</span>
+            <ul>
+                <li><button>Music</button></li>
+                <li><button>Art</button></li>
+                <li><button>Sport</button></li>
+                <li><button>Photography</button></li>
+                <li><button>Virtual Reality</button></li>
+                <li><button>Videos</button></li>
+                <li><button>...</button></li>
+            </ul>
+        </div>
+        <div class="products">
+            <div class="products-1">
+                <div class="product-image">
+                    <img src="./assets/image1.png" alt="product image" width="222px" height="223px">
+                </div>
+                <div class="product-detail">
+                    <span class="product-name">Crazy Apes</span>
+                    <img style="float:right; width: 29px; height: 28px;" src="./assets/author-image.png"
+                        alt="author image">
+                    <p class="product-author">Created by hx45...250e</p>
+                    <div class="product-price">
+                        <img src="./assets/Ellipse 6.png">
+                        <span>3.90 ICX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-1">
+                <div class="product-image">
+                    <img src="./assets/image2.png" alt="product image" width="222px" height="223px">
+                </div>
+                <div class="product-detail">
+                    <span class="product-name">Crazy Apes</span>
+                    <img style="float:right; width: 29px; height: 28px;" src="./assets/author-image.png"
+                        alt="author image">
+                    <p class="product-author">Created by hx45...250e</p>
+                    <div class="product-price">
+                        <img src="./assets/Ellipse 6.png">
+                        <span>3.90 ICX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-1">
+                <div class="product-image">
+                    <img src="./assets/image3.png" alt="product image" width="222px" height="223px">
+                </div>
+                <div class="product-detail">
+                    <span class="product-name">Crazy Apes</span>
+                    <img style="float:right; width: 29px; height: 28px;" src="./assets/author-image.png"
+                        alt="author image">
+                    <p class="product-author">Created by hx45...250e</p>
+                    <div class="product-price">
+                        <img src="./assets/Ellipse 6.png">
+                        <span>3.90 ICX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-1">
+                <div class="product-image">
+                    <img src="./assets/image4.png" alt="product image" width="222px" height="223px">
+                </div>
+                <div class="product-detail">
+                    <span class="product-name">Crazy Apes</span>
+                    <img style="float:right; width: 29px; height: 28px;" src="./assets/author-image.png"
+                        alt="author image">
+                    <p class="product-author">Created by hx45...250e</p>
+                    <div class="product-price">
+                        <img src="./assets/Ellipse 6.png">
+                        <span>3.90 ICX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-1">
+                <div class="product-image">
+                    <img src="./assets/image5.png" alt="product image" width="222px" height="223px">
+                </div>
+                <div class="product-detail">
+                    <span class="product-name">Crazy Apes</span>
+                    <img style="float:right; width: 29px; height: 28px;" src="./assets/author-image.png"
+                        alt="author image">
+                    <p class="product-author">Created by hx45...250e</p>
+                    <div class="product-price">
+                        <img src="./assets/Ellipse 6.png">
+                        <span>3.90 ICX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="products-1">
+                <div class="product-image">
+                    <img src="./assets/image6.png" alt="product image" width="222px" height="223px">
+                </div>
+                <div class="product-detail">
+                    <span class="product-name">Crazy Apes</span>
+                    <img style="float:right; width: 29px; height: 28px;" src="./assets/author-image.png"
+                        alt="author image">
+                    <p class="product-author">Created by hx45...250e</p>
+                    <div class="product-price">
+                        <img src="./assets/Ellipse 6.png">
+                        <span>3.90 ICX</span>
+                    </div>
+                </div>
+            </div>
+            <div class="page-number">
+                <button>&#171;</button>
+                <button>&#8249;</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>&#8250;</button>
+                <button>&#187;</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="first column">
+            <h1>Devestore</h1>
+            <p>Amazing NFTs marketplace, Authentic and unique digital creation.</p>
+            <img src="./assets/Ellipse 18.png" alt="Facebook icon">
+            <img src="./assets/Ellipse 19.png" alt="Youtube icon">
+            <img src="./assets/Ellipse 20.png" alt="Twitter icon">
+        </div>
+        <div class="extension column">
+            <h1>Marketplace</h1>
+            <p>Explore</p>
+            <p>NFTs</p>
+            <p>Collectibles</p>
+            <p>Virtual Reality</p>
+        </div>
+        <div class="extension column">
+            <h1>Resources</h1>
+            <p>Help Center</p>
+            <p>Partners</p>
+            <p>Blog</p>
+            <p>Newsletter</p>
+        </div>
+        <div class="extension column">
+            <h1>Company</h1>
+            <p>About Us</p>
+            <p>Careers</p>
+            <p>Support</p>
+            <p>Newsletter</p>
+        </div>
+        <div class="info-footer">
+            <span>Copyright 2022 Devera, All right reserved.</span>
+            <span>Privacy Policy <span>Terms & Conditions</span> </span>
+            
+        </div>
+    </footer>
+
+</body>
+
+</html>
