@@ -1,0 +1,43 @@
+html
+{
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--background-color);
+}
+body
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+li
+{
+    list-style: none;;
+}
+
+.btn
+{
+    border: none;
+    width: 93px;
+    height: 30px;
+    /* padding: 10px 10px; */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn-primary
+{
+    color: var(--white-color);
+    background: linear-gradient(90deg, #E12D2D 0%, #1254FE 100%);
+}
+.btn-purple
+{
+    color: var(--white-color);
+    background-color: var(--purple-color);
+}
+.text-sm
+{
+    color: var(--white-color);
+    font-size: 13px;
+}
