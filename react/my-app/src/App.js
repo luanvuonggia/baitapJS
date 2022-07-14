@@ -1,12 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import 'antd/dist/antd.css';
+import About from './containers/About';
+import Dashboard from './containers/Dashboard';
+import { Routes, Route } from 'react-router-dom'
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-      </header>
-    </div>
+    <Routes>
+      <Route path='/' element={<Dashboard />} />
+      <Route path='/about' element={<About />} />
+    </Routes>
   );
 }
 
