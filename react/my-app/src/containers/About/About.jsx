@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const members = [
   {
     name: "Linh Tran",
@@ -62,6 +62,23 @@ const Dashboard = () => (
   <div className="About">
     <div className="about-section">
       <h1>About Us Page</h1>
+      <ul>
+        <li>
+          <Link to="/" className="nav-link">
+            Dashboard
+          </Link>
+        </li>
+        <li>
+          <Link to="/about" className="nav-link">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/view-product" className="nav-link">
+            View Product
+          </Link>
+        </li>
+      </ul>
       <p>Some text about who we are and what we do.</p>
       <p>
         Resize the browser window to see that this page is responsive by the
