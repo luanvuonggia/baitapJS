@@ -1,40 +1,153 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../../logo.svg";
-import { Button } from "antd";
 import styled from "styled-components";
-import { Col, Row } from "antd";
+import { Form, Field } from "react-final-form";
+import { Input } from "antd";
+import { useRematchDispatch, useSelect } from "../../hooks";
 const DashboardStyle = styled.div`
-  .ant-btn-primary {
-    background-color: violet;
+  ul {
+    li {
+      list-style-type: none;
+      padding: 0;
+      display: inline;
+      margin-right: 20px;
+    }
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
   }
 `;
-const Dashboard = () => (
-  <DashboardStyle>
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+const Dashboard = () => {
+  const [userInfo, setUserInfo] = useState({});
 
-        <ul>
-          <li>
-            <Link to="/" className="nav-link">
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="nav-link">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/view-product" className="nav-link">
-              View Product
-            </Link>
-          </li>
-        </ul>
-      </header>
-    </div>
-  </DashboardStyle>
-);
+  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+  // const { getAvatartAsync, updateFirstName } = useRematchDispatch(
+  //   ({ userInfo }) => ({
+  //     getAvatartAsync: userInfo.getAvatartAsync,
+  //     updateFirstName: userInfo.updateFirstName,
+  //   })
+  // );
+
+  // const { firstName } = useSelect(({ userInfo }) => ({
+  //   firstName: userInfo.selectFirstName,
+  // }));
+  const onSubmit = async (values) => {
+    //await sleep(300);
+    //window.alert(JSON.stringify(values, 0, 2));
+    // updateFirstName(values.firstName);
+    // getAvatartAsync(values.firstName);
+    setUserInfo(values);
+  };
+
+  const required = (value) => (value ? undefined : "Required");
+  const mustBeNumber = (value) =>
+    isNaN(value) ? "Must be a number" : undefined;
+  const minValue = (min) => (value) =>
+    isNaN(value) || value >= min ? undefined : `Should be greater than ${min}`;
+  const composeValidators =
+    (...validators) =>
+    (value) =>
+      validators.reduce(
+        (error, validator) => error || validator(value),
+        undefined
+      );
+  return (
+    <DashboardStyle>
+      <div className="App">
+        <header className="App-header">
+          {/* <ul>
+            <li>
+              <Link to="/" className="nav-link">
+                Dashboard
+              </Link>
+            </li>
+            <li>
+              <Link to="/about" className="nav-link">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link to="/view-product" className="nav-link">
+                View Product
+              </Link>
+            </li>
+          </ul> */}
+
+          <h1 id="hiiiii">last name:{userInfo?.lastName}</h1>
+
+          <div className="info-form">
+            <Form
+              onSubmit={onSubmit}
+              render={({
+                handleSubmit,
+                form,
+                submitting,
+                pristine,
+                values,
+              }) => (
+                <form onSubmit={handleSubmit}>
+                  <Field name="firstName" validate={required}>
+                    {({ input, meta }) => (
+                      <div>
+                        <Input
+                          {...input}
+                          type="text"
+                          placeholder="First Name"
+                        />
+                        {meta.error && meta.touched && (
+                          <span className="error-message">{meta.error}</span>
+                        )}
+                      </div>
+                    )}
+                  </Field>
+                  <Field name="lastName">
+                    {({ input, meta }) => (
+                      <div>
+                        <Input {...input} type="text" placeholder="Last Name" />
+                        {meta.error && meta.touched && (
+                          <span className="error-message">{meta.error}</span>
+                        )}
+                      </div>
+                    )}
+                  </Field>
+                  <Field
+                    name="age"
+                    validate={composeValidators(
+                      required,
+                      mustBeNumber,
+                      minValue(18)
+                    )}
+                  >
+                    {({ input, meta }) => (
+                      <div>
+                        <Input {...input} type="text" placeholder="Age" />
+                        {meta.error && meta.touched && (
+                          <span className="error-message">{meta.error}</span>
+                        )}
+                      </div>
+                    )}
+                  </Field>
+                  <div className="buttons">
+                    <button type="submit" disabled={submitting}>
+                      Submit
+                    </button>
+                    <button
+                      type="button"
+                      onClick={form.reset}
+                      disabled={submitting || pristine}
+                    >
+                      Reset
+                    </button>
+                  </div>
+                </form>
+              )}
+            />
+          </div>
+        </header>
+      </div>
+    </DashboardStyle>
+  );
+};
 
 export default Dashboard;
