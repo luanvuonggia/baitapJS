@@ -1,16 +1,16 @@
 import { getAvatar } from '../../services/UserService'
 export const userInfo = {
     state: {
-        fistName: '',
+        firstName: '',
         lastName: '',
         avatar: '',
     }, // initial state
     reducers: {
       // handle state changes with pure functions
-      setFistName(state, fistName) {
+      setFirstName(state, firstName) {
         return {
             ...state,
-            fistName,
+            firstName,
           };
       },
       setLastName(state, lastName) {
@@ -30,7 +30,7 @@ export const userInfo = {
       // handle state changes with impure functions.
       // use async/await for async actions
       async updateFirstName(payload, rootState) {
-        this.setFistName(payload);
+        this.setFirstName(payload);
       },
       async getAvatartAsync(payload, rootState) {
         const avatarURL = await getAvatar(payload)
@@ -42,7 +42,7 @@ export const userInfo = {
           return slice(state => state.lastName);
         },
         selectFirstName() {
-          return slice(state => state.fistName);
+          return slice(state => state.firstName);
         },
     }),
   };

@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Form, Field } from "react-final-form";
 import { Input } from "antd";
-import { useRematchDispatch, useSelect } from "../../hooks";
+import { useRematchDispatch } from "../../hooks";
+import { useSelector } from "react-redux";
 const DashboardStyle = styled.div`
   ul {
     li {
@@ -19,25 +20,22 @@ const DashboardStyle = styled.div`
   }
 `;
 const Dashboard = () => {
-  const [userInfo, setUserInfo] = useState({});
+  const userState = useSelector((state) => state.userInfo); // lấy data từ store ra sài
 
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  // const { getAvatartAsync, updateFirstName } = useRematchDispatch(
-  //   ({ userInfo }) => ({
-  //     getAvatartAsync: userInfo.getAvatartAsync,
-  //     updateFirstName: userInfo.updateFirstName,
-  //   })
-  // );
+  const { getAvatartAsync, updateFirstName } = useRematchDispatch(
+    ({ userInfo }) => ({
+      getAvatartAsync: userInfo.getAvatartAsync,
+      updateFirstName: userInfo.updateFirstName,
+    })
+  );
 
-  // const { firstName } = useSelect(({ userInfo }) => ({
-  //   firstName: userInfo.selectFirstName,
-  // }));
   const onSubmit = async (values) => {
     //await sleep(300);
     //window.alert(JSON.stringify(values, 0, 2));
-    // updateFirstName(values.firstName);
+    updateFirstName(values.firstName);
     // getAvatartAsync(values.firstName);
-    setUserInfo(values);
+    localStorage.setItem("isLogin", true);
   };
 
   const required = (value) => (value ? undefined : "Required");
@@ -56,7 +54,7 @@ const Dashboard = () => {
     <DashboardStyle>
       <div className="App">
         <header className="App-header">
-          {/* <ul>
+          <ul>
             <li>
               <Link to="/" className="nav-link">
                 Dashboard
@@ -72,9 +70,9 @@ const Dashboard = () => {
                 View Product
               </Link>
             </li>
-          </ul> */}
+          </ul>
 
-          <h1 id="hiiiii">last name:{userInfo?.lastName}</h1>
+          <h1 id="hiiiii">1st name:{userState?.firstName}</h1>
 
           <div className="info-form">
             <Form

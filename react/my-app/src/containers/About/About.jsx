@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const members = [
   {
     name: "Linh Tran",
@@ -58,52 +59,40 @@ const members = [
     email: "quangdang@example.net",
   },
 ];
-const Dashboard = () => (
-  <div className="About">
-    <div className="about-section">
-      <h1>About Us Page</h1>
-      <ul>
-        <li>
-          <Link to="/" className="nav-link">
-            Dashboard
-          </Link>
-        </li>
-        <li>
-          <Link to="/about" className="nav-link">
-            About
-          </Link>
-        </li>
-        <li>
-          <Link to="/view-product" className="nav-link">
-            View Product
-          </Link>
-        </li>
-      </ul>
-      <p>Some text about who we are and what we do.</p>
-      <p>
-        Resize the browser window to see that this page is responsive by the
-        way.
-      </p>
-    </div>
+const About = () => {
+  const userState = useSelector((state) => state.userInfo); // lấy data từ store ra sài
+  return (
+    <div className="About">
+      <div className="about-section">
+        <h1>About Us Page</h1>
+        <h2>1st name: {userState.firstName}</h2>
+        <ul>
+          <li>
+            <Link to="/" className="nav-link">
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="nav-link">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link to="/view-product" className="nav-link">
+              View Product
+            </Link>
+          </li>
+        </ul>
+        <p>Some text about who we are and what we do.</p>
+        <p>
+          Resize the browser window to see that this page is responsive by the
+          way.
+        </p>
+      </div>
 
-    <h2 style={{ textAlign: "center" }}>Our Team</h2>
-    <div className="row">
-      {members.map(({ name, email }) => (
-        <div className="column" key={name}>
-          <div className="card">
-            <div className="container">
-              <h2>{name}</h2>
-              <p className="title">Front End Developer</p>
-              <p>{email}</p>
-              <p>
-                <button className="button">Contact</button>
-              </p>
-            </div>
-          </div>
-        </div>
-      ))}
+      <h2 style={{ textAlign: "center" }}>Our Team</h2>
     </div>
-  </div>
-);
+  );
+};
 
-export default Dashboard;
+export default About;
