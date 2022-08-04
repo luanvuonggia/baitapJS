@@ -6,11 +6,15 @@ const LayoutStyled = styled(Layout)`
   background-color: #1c233d;
 `;
 
-const PrimaryLayout = ({ children, ...rest }) => {
+const PrimaryLayout = ({ children }) => {
   return (
     <Layout style={{ minHeight: "100vh" }}>
       <Header />
       <LayoutStyled>{children}</LayoutStyled>
+      <footer>
+        <div>aaaaaaa</div>
+        <button>Footer button</button>
+      </footer>
     </Layout>
   );
 };
