@@ -1,3 +1,4 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { Avatar, Button, Dropdown, Layout, Menu } from "antd";
 import { UserOutlined } from "@ant-design/icons";
@@ -7,20 +8,38 @@ const HeaderStyled = styled(Layout.Header)`
   position: fixed;
   z-index: 99;
   width: 100%;
-  height: 60px;
-  line-height: 80px;
   display: flex;
   align-items: center;
-  padding: 0 20px;
   background-color: #1c233d;
+  h1 {
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 32px;
+    color: #e5e5e5;
+  }
   li {
     display: inline-block;
-    font-size: 20px;
     padding: 20px;
+  }
+  .nav-link {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height */
+
+    color: #e5e5e5;
   }
 
   @media (min-width: 992px) {
     height: 80px;
+  }
+  .connect-btn {
+    width: 93px;
+    height: 50px;
+    background: blue;
+    border-radius: 5px;
+    border: none;
+    color: white;
   }
 `;
 
@@ -57,6 +76,8 @@ const UserStyled = styled.div`
 
 // eslint-disable-next-line arrow-body-style
 const Header = () => {
+  const [userAvatar, setUserAvatar] = useState("");
+
   const avatar =
     "https://www.cgv.vn/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/a/v/avatar_2__teaser_poster_1_.jpg";
   const handleMenuClick = (e) => {
@@ -71,17 +92,22 @@ const Header = () => {
       <ul>
         <li>
           <Link to="/" className="nav-link">
-            Dashboard
+            Explore
           </Link>
         </li>
         <li>
           <Link to="/about" className="nav-link">
-            About
+            Marketplace
           </Link>
         </li>
         <li>
           <Link to="/view-product" className="nav-link">
-            View Product
+            Artist
+          </Link>
+        </li>
+        <li>
+          <Link to="/collection" className="nav-link">
+            Collection
           </Link>
         </li>
       </ul>
@@ -89,22 +115,31 @@ const Header = () => {
         <input type="text" placeholder="Search" className="input-search" />
         <i className="fa-solid fa-magnifying-glass"></i>
       </div>
-      <button class="connect-btn">Connect</button>
+
       <HeaderRightStyled>
         <div className="header-lg">
-          <UserStyled
-            style={{
-              paddingRight: 20,
-              marginRight: 20,
-            }}
-          >
-            {avatar ? (
-              <Avatar size={36} src={avatar} />
-            ) : (
-              <Avatar size={36} icon={<UserOutlined />} />
-            )}
-            <span style={{ marginLeft: 5, color: "#fff" }}>{"Luan"}</span>
-          </UserStyled>
+          {userAvatar ? (
+            <UserStyled
+              style={{
+                paddingRight: 20,
+                marginRight: 20,
+              }}
+            >
+              <Avatar size={36} src={userAvatar} />
+              <span style={{ marginLeft: 5, color: "#fff" }}>{"Luan"}</span>
+            </UserStyled>
+          ) : (
+            <button
+              className="connect-btn"
+              onClick={() => {
+                setUserAvatar(
+                  "https://www.cgv.vn/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/a/v/avatar_2__teaser_poster_1_.jpg"
+                );
+              }}
+            >
+              Connect
+            </button>
+          )}
         </div>
         <Dropdown
           className="header-small"

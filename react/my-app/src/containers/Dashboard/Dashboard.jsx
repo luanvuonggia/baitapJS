@@ -53,7 +53,104 @@ const Dashboard = () => {
       );
   return (
     <PrimaryLayout>
-      <DashboardStyle>Home page</DashboardStyle>
+      <DashboardStyle>
+        <div className="App">
+          <header className="App-header">
+            <ul>
+              <li>
+                <Link to="/" className="nav-link">
+                  Dashboard
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="nav-link">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/view-product" className="nav-link">
+                  View Product
+                </Link>
+              </li>
+            </ul>
+
+            <h1 id="hiiiii">1st name:{userState?.firstName}</h1>
+
+            <div className="info-form">
+              <Form
+                onSubmit={onSubmit}
+                render={({
+                  handleSubmit,
+                  form,
+                  submitting,
+                  pristine,
+                  values,
+                }) => (
+                  <form onSubmit={handleSubmit}>
+                    <Field name="firstName" validate={required}>
+                      {({ input, meta }) => (
+                        <div>
+                          <Input
+                            {...input}
+                            type="text"
+                            placeholder="First Name"
+                          />
+                          {meta.error && meta.touched && (
+                            <span className="error-message">{meta.error}</span>
+                          )}
+                        </div>
+                      )}
+                    </Field>
+                    <Field name="lastName">
+                      {({ input, meta }) => (
+                        <div>
+                          <Input
+                            {...input}
+                            type="text"
+                            placeholder="Last Name"
+                          />
+                          {meta.error && meta.touched && (
+                            <span className="error-message">{meta.error}</span>
+                          )}
+                        </div>
+                      )}
+                    </Field>
+                    <Field
+                      name="age"
+                      validate={composeValidators(
+                        required,
+                        mustBeNumber,
+                        minValue(18)
+                      )}
+                    >
+                      {({ input, meta }) => (
+                        <div>
+                          <Input {...input} type="text" placeholder="Age" />
+                          {meta.error && meta.touched && (
+                            <span className="error-message">{meta.error}</span>
+                          )}
+                        </div>
+                      )}
+                    </Field>
+                    <div className="buttons">
+                      <button type="submit" disabled={submitting}>
+                        Submit
+                      </button>
+                      <button
+                        type="button"
+                        onClick={form.reset}
+                        disabled={submitting || pristine}
+                      >
+                        Reset
+                      </button>
+                    </div>
+                  </form>
+                )}
+              />
+            </div>
+          </header>
+        </div>
+      </DashboardStyle>
     </PrimaryLayout>
   );
 };
