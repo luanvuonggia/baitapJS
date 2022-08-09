@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Form, Field } from "react-final-form";
 import { Input } from "antd";
-import { useRematchDispatch } from "../../hooks";
+//import { useRematchDispatch } from "hooks";
 import { useSelector } from "react-redux";
 import { PrimaryLayout } from "components/Layout";
+import { transfer } from "sdk/iconSDK.js";
 const DashboardStyle = styled.div`
   ul {
     li {
@@ -23,20 +23,21 @@ const DashboardStyle = styled.div`
 const Dashboard = () => {
   const userState = useSelector((state) => state.userInfo); // lấy data từ store ra sài
 
-  const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-  const { getAvatartAsync, updateFirstName } = useRematchDispatch(
-    ({ userInfo }) => ({
-      getAvatartAsync: userInfo.getAvatartAsync,
-      updateFirstName: userInfo.updateFirstName,
-    })
-  );
+  const sendToken = (price) => {
+    transfer({
+      to: "hx4568c57cdb8feaacf80cb5250eb1ca256502b35e",
+      value: price,
+    });
+  };
+  // const { getAvatartAsync, updateFirstName } = useRematchDispatch(
+  //   ({ userInfo }) => ({
+  //     getAvatartAsync: userInfo.getAvatartAsync,
+  //     updateFirstName: userInfo.updateFirstName,
+  //   })
+  // );
 
   const onSubmit = async (values) => {
-    //await sleep(300);
-    //window.alert(JSON.stringify(values, 0, 2));
-    updateFirstName(values.firstName);
-    // getAvatartAsync(values.firstName);
-    localStorage.setItem("isLogin", true);
+    sendToken(values.price);
   };
 
   const required = (value) => (value ? undefined : "Required");
@@ -56,26 +57,6 @@ const Dashboard = () => {
       <DashboardStyle>
         <div className="App">
           <header className="App-header">
-            <ul>
-              <li>
-                <Link to="/" className="nav-link">
-                  Dashboard
-                </Link>
-              </li>
-              <li>
-                <Link to="/about" className="nav-link">
-                  About
-                </Link>
-              </li>
-              <li>
-                <Link to="/view-product" className="nav-link">
-                  View Product
-                </Link>
-              </li>
-            </ul>
-
-            <h1 id="hiiiii">1st name:{userState?.firstName}</h1>
-
             <div className="info-form">
               <Form
                 onSubmit={onSubmit}
@@ -87,61 +68,31 @@ const Dashboard = () => {
                   values,
                 }) => (
                   <form onSubmit={handleSubmit}>
-                    <Field name="firstName" validate={required}>
-                      {({ input, meta }) => (
-                        <div>
-                          <Input
-                            {...input}
-                            type="text"
-                            placeholder="First Name"
-                          />
-                          {meta.error && meta.touched && (
-                            <span className="error-message">{meta.error}</span>
-                          )}
-                        </div>
-                      )}
-                    </Field>
-                    <Field name="lastName">
-                      {({ input, meta }) => (
-                        <div>
-                          <Input
-                            {...input}
-                            type="text"
-                            placeholder="Last Name"
-                          />
-                          {meta.error && meta.touched && (
-                            <span className="error-message">{meta.error}</span>
-                          )}
-                        </div>
-                      )}
-                    </Field>
                     <Field
-                      name="age"
+                      name="price"
                       validate={composeValidators(
                         required,
                         mustBeNumber,
-                        minValue(18)
+                        minValue(0)
                       )}
                     >
                       {({ input, meta }) => (
                         <div>
-                          <Input {...input} type="text" placeholder="Age" />
+                          <Input
+                            {...input}
+                            type="number"
+                            placeholder="input price"
+                          />
                           {meta.error && meta.touched && (
                             <span className="error-message">{meta.error}</span>
                           )}
                         </div>
                       )}
                     </Field>
+
                     <div className="buttons">
                       <button type="submit" disabled={submitting}>
-                        Submit
-                      </button>
-                      <button
-                        type="button"
-                        onClick={form.reset}
-                        disabled={submitting || pristine}
-                      >
-                        Reset
+                        Send ICX
                       </button>
                     </div>
                   </form>

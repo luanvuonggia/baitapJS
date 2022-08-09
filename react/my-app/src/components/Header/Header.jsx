@@ -1,8 +1,9 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { Avatar, Button, Dropdown, Layout, Menu } from "antd";
+import { Avatar, Layout } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
+import { connectWallet, hashShortener, disConnect } from "sdk/iconSDK.js";
 
 const HeaderStyled = styled(Layout.Header)`
   position: fixed;
@@ -76,15 +77,7 @@ const UserStyled = styled.div`
 
 // eslint-disable-next-line arrow-body-style
 const Header = () => {
-  const [userAvatar, setUserAvatar] = useState("");
-
-  const avatar =
-    "https://www.cgv.vn/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/a/v/avatar_2__teaser_poster_1_.jpg";
-  const handleMenuClick = (e) => {
-    if (e.key === "logout") {
-      //;
-    }
-  };
+  const [address, setAddress] = useState(localStorage.getItem("address"));
 
   return (
     <HeaderStyled>
@@ -118,59 +111,33 @@ const Header = () => {
 
       <HeaderRightStyled>
         <div className="header-lg">
-          {userAvatar ? (
+          {address ? (
             <UserStyled
               style={{
                 paddingRight: 20,
                 marginRight: 20,
               }}
             >
-              <Avatar size={36} src={userAvatar} />
-              <span style={{ marginLeft: 5, color: "#fff" }}>{"Luan"}</span>
+              <Avatar size={30} icon={<UserOutlined />} />
+              <span style={{ marginLeft: 5, color: "#fff" }}>
+                {hashShortener(address)}
+              </span>
+              <button
+                className="connect-btn"
+                onClick={() => disConnect(setAddress)}
+              >
+                Disconnect
+              </button>
             </UserStyled>
           ) : (
             <button
               className="connect-btn"
-              onClick={() => {
-                setUserAvatar(
-                  "https://www.cgv.vn/media/catalog/product/cache/1/image/c5f0a1eff4c394a251036189ccddaacd/a/v/avatar_2__teaser_poster_1_.jpg"
-                );
-              }}
+              onClick={() => connectWallet(setAddress)}
             >
               Connect
             </button>
           )}
         </div>
-        <Dropdown
-          className="header-small"
-          overlay={
-            <Menu
-              onClick={handleMenuClick}
-              items={[
-                {
-                  label: "Luan",
-                  key: "username",
-                },
-                {
-                  type: "divider",
-                },
-                {
-                  label: "logout",
-                  key: "logout",
-                },
-              ]}
-            />
-          }
-          trigger={["click"]}
-        >
-          <UserStyled>
-            {avatar ? (
-              <Avatar size={30} src={avatar} />
-            ) : (
-              <Avatar size={30} icon={<UserOutlined />} />
-            )}
-          </UserStyled>
-        </Dropdown>
       </HeaderRightStyled>
     </HeaderStyled>
   );
