@@ -46,10 +46,10 @@ export const getBalance = (address) => {
     });
 };
 
-export const disConnect = (setAddress) => {
-  sessionStorage.setItem('isConnected', '');
-  localStorage.setItem('address', '');
-  setAddress(null);
+export const disConnect = () => {
+  sessionStorage.removeItem('isConnected');
+  localStorage.removeItem('address');
+  localStorage.removeItem('metamask-address');
 }
 export const connectWallet = (setAddress) => {
   if (window) {
