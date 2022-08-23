@@ -128,6 +128,9 @@ export const signTx = async (transaction) => {
           resolve(payload);
           console.log('Done');
         }
+        if (type === "CANCEL_JSON-RPC" ) {
+          console.log('Cancel');
+        }
       },
       { once: true }
     );
