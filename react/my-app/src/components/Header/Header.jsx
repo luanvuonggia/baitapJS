@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Avatar, Layout } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { connectWallet, hashShortener, disConnect } from "sdk/iconSDK.js";
+import { EthereumInstance } from "sdk/metamask.js";
 
 const HeaderStyled = styled(Layout.Header)`
   position: fixed;
@@ -35,7 +36,7 @@ const HeaderStyled = styled(Layout.Header)`
     height: 80px;
   }
   .connect-btn {
-    width: 93px;
+    margin-left: 12px;
     height: 50px;
     background: blue;
     border-radius: 5px;
@@ -78,7 +79,22 @@ const UserStyled = styled.div`
 // eslint-disable-next-line arrow-body-style
 const Header = () => {
   const [address, setAddress] = useState(localStorage.getItem("address"));
-
+  const [metamaskAddress, setMetamaskAddress] = useState(
+    localStorage.getItem("metamask-address")
+  );
+  useEffect(() => {
+    if (localStorage.getItem("metamask-address")) {
+      EthereumInstance.getEthereumAccounts();
+    }
+  }, []);
+  const connectMetamask = async (setMetamaskAddress) => {
+    if (localStorage.getItem("metamask-address")) {
+      EthereumInstance.getEthereumAccounts();
+    } else {
+      const account = await EthereumInstance.connectMetaMaskWallet();
+      setMetamaskAddress(account[0]);
+    }
+  };
   return (
     <HeaderStyled>
       <h1>Devestore</h1>
@@ -111,7 +127,7 @@ const Header = () => {
 
       <HeaderRightStyled>
         <div className="header-lg">
-          {address ? (
+          {address || metamaskAddress ? (
             <UserStyled
               style={{
                 paddingRight: 20,
@@ -120,22 +136,36 @@ const Header = () => {
             >
               <Avatar size={30} icon={<UserOutlined />} />
               <span style={{ marginLeft: 5, color: "#fff" }}>
-                {hashShortener(address)}
+                {address
+                  ? hashShortener(address)
+                  : hashShortener(metamaskAddress)}
               </span>
               <button
                 className="connect-btn"
-                onClick={() => disConnect(setAddress)}
+                onClick={() => {
+                  disConnect();
+                  setAddress("");
+                  setMetamaskAddress("");
+                }}
               >
                 Disconnect
               </button>
             </UserStyled>
           ) : (
-            <button
-              className="connect-btn"
-              onClick={() => connectWallet(setAddress)}
-            >
-              Connect
-            </button>
+            <>
+              <button
+                className="connect-btn"
+                onClick={() => connectWallet(setAddress)}
+              >
+                Connect Hana
+              </button>
+              <button
+                className="connect-btn"
+                onClick={() => connectMetamask(setMetamaskAddress)}
+              >
+                Connect Metamask
+              </button>
+            </>
           )}
         </div>
       </HeaderRightStyled>

@@ -46,10 +46,10 @@ export const getBalance = (address) => {
     });
 };
 
-export const disConnect = (setAddress) => {
-  sessionStorage.setItem('isConnected', '');
-  localStorage.setItem('address', '');
-  setAddress(null);
+export const disConnect = () => {
+  sessionStorage.removeItem('isConnected');
+  localStorage.removeItem('address');
+  localStorage.removeItem('metamask-address');
 }
 export const connectWallet = (setAddress) => {
   if (window) {
@@ -127,6 +127,9 @@ export const signTx = async (transaction) => {
         if (type === 'RESPONSE_JSON-RPC') {
           resolve(payload);
           console.log('Done');
+        }
+        if (type === "CANCEL_JSON-RPC" ) {
+          console.log('Cancel');
         }
       },
       { once: true }

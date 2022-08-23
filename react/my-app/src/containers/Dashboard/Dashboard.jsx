@@ -6,6 +6,7 @@ import { Input } from "antd";
 import { useSelector } from "react-redux";
 import { PrimaryLayout } from "components/Layout";
 import { transfer } from "sdk/iconSDK.js";
+import { EthereumInstance } from "sdk/metamask.js";
 const DashboardStyle = styled.div`
   ul {
     li {
@@ -19,13 +20,16 @@ const DashboardStyle = styled.div`
     color: red;
     font-size: 14px;
   }
+  .send-btn {
+    background-color: black;
+  }
 `;
 const Dashboard = () => {
   const userState = useSelector((state) => state.userInfo); // lấy data từ store ra sài
 
   const sendToken = (price) => {
     transfer({
-      to: "hx4568c57cdb8feaacf80cb5250eb1ca256502b35e",
+      to: "hx4568c57cdb8feaacf80cb5250eb1ca256502b35e", //Luan
       value: price,
     });
   };
@@ -38,6 +42,13 @@ const Dashboard = () => {
 
   const onSubmit = async (values) => {
     sendToken(values.price);
+  };
+
+  const transferMetaMask = async (values) => {
+    EthereumInstance.transfer(
+      "0x773539d4Ac0e786233D90A233654ccEE26a613D9",
+      values.price
+    );
   };
 
   const required = (value) => (value ? undefined : "Required");
@@ -91,8 +102,21 @@ const Dashboard = () => {
                     </Field>
 
                     <div className="buttons">
-                      <button type="submit" disabled={submitting}>
+                      <button
+                        className="send-btn"
+                        type="submit"
+                        disabled={submitting}
+                      >
                         Send ICX
+                      </button>
+                      <button
+                        className="send-btn"
+                        type="button"
+                        onClick={() => {
+                          transferMetaMask(values);
+                        }}
+                      >
+                        Send Metamask
                       </button>
                     </div>
                   </form>
